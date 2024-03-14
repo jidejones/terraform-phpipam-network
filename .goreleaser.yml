@@ -45,3 +45,8 @@ release:
   # draft: true
 changelog:
   skip: true
+release:
+  disable: false
+  github:
+      owner: jidejones
+      name: terraform-provider-phpipam
