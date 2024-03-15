@@ -85,7 +85,7 @@ func (c *Config) Client() (interface{}, error) {
 	// 	return nil, err
 	// }
 
-	// return &client, nil
+	return &client, nil
 }
 
 // ValidateConnection ensures that we can connect to PHPIPAM early, so that we
