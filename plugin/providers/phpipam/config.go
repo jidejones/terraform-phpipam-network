@@ -81,11 +81,11 @@ func (c *Config) Client() (interface{}, error) {
 	}
 
 	// Validate that our conneciton is okay
-	if err := c.ValidateConnection(client.sectionsController); err != nil {
-		return nil, err
-	}
+	// if err := c.ValidateConnection(client.sectionsController); err != nil {
+	// 	return nil, err
+	// }
 
-	return &client, nil
+	// return &client, nil
 }
 
 // ValidateConnection ensures that we can connect to PHPIPAM early, so that we
