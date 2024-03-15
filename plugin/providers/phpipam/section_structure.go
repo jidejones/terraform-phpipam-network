@@ -19,7 +19,7 @@ var resourceSectionOptionalFields = linearSearchSlice{
 	"strict_mode",
 	"subnet_ordering",
 	"display_order",
-	// "show_vlan_in_subnet_listing",
+	"show_vlan_in_subnet_listing",
 	"show_vrf_in_subnet_listing",
 	"show_supernet_only",
 	"dns_resolver_id",
@@ -58,9 +58,9 @@ func bareSectionSchema() map[string]*schema.Schema {
 		"edit_date": &schema.Schema{
 			Type: schema.TypeString,
 		},
-		// "show_vlan_in_subnet_listing": &schema.Schema{
-		// 	Type: schema.TypeBool,
-		// },
+		"show_vlan_in_subnet_listing": &schema.Schema{
+			Type: schema.TypeBool,
+		},
 		"show_vrf_in_subnet_listing": &schema.Schema{
 			Type: schema.TypeBool,
 		},
@@ -131,7 +131,7 @@ func expandSection(d *schema.ResourceData) sections.Section {
 		SubnetOrdering:   d.Get("subnet_ordering").(string),
 		Order:            d.Get("display_order").(int),
 		EditDate:         d.Get("edit_date").(string),
-		// ShowVLAN:         phpipam.BoolIntString(d.Get("show_vlan_in_subnet_listing").(bool)),
+		ShowVLAN:         phpipam.BoolIntString(d.Get("show_vlan_in_subnet_listing").(bool)),
 		ShowVRF:          phpipam.BoolIntString(d.Get("show_vrf_in_subnet_listing").(bool)),
 		ShowSupernetOnly: phpipam.BoolIntString(d.Get("show_supernet_only").(bool)),
 		DNS:              d.Get("dns_resolver_id").(int),
@@ -153,7 +153,7 @@ func flattenSection(s sections.Section, d *schema.ResourceData) {
 	d.Set("subnet_ordering", s.SubnetOrdering)
 	d.Set("display_order", s.Order)
 	d.Set("edit_date", s.EditDate)
-	// d.Set("show_vlan_in_subnet_listing", s.ShowVLAN)
+	d.Set("show_vlan_in_subnet_listing", s.ShowVLAN)
 	d.Set("show_vrf_in_subnet_listing", s.ShowVRF)
 	d.Set("show_supernet_only", s.ShowSupernetOnly)
 	d.Set("dns_resolver_id", s.DNS)
