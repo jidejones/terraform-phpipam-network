@@ -42,7 +42,7 @@ func Provider() *schema.Provider {
 
 		ResourcesMap: map[string]*schema.Resource{
 			"phpipam_address":            resourcePHPIPAMAddress(),
-			"phpipam_section":            resourcePHPIPAMSection(),
+			// "phpipam_section":            resourcePHPIPAMSection(),
 			"phpipam_l2domain":           resourcePHPIPAML2Domain(),
 			"phpipam_subnet":             resourcePHPIPAMSubnet(),
 			"phpipam_vlan":               resourcePHPIPAMVLAN(),
@@ -54,7 +54,7 @@ func Provider() *schema.Provider {
 			"phpipam_address":            dataSourcePHPIPAMAddress(),
 			"phpipam_addresses":          dataSourcePHPIPAMAddresses(),
 			"phpipam_first_free_address": dataSourcePHPIPAMFirstFreeAddress(),
-			"phpipam_section":            dataSourcePHPIPAMSection(),
+			// "phpipam_section":            dataSourcePHPIPAMSection(),
 			"phpipam_l2domain":           dataSourcePHPIPAML2Domain(),
 			"phpipam_subnet":             dataSourcePHPIPAMSubnet(),
 			"phpipam_subnets":            dataSourcePHPIPAMSubnets(),

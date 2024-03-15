@@ -90,7 +90,7 @@ func (c *Config) Client() (interface{}, error) {
 
 // ValidateConnection ensures that we can connect to PHPIPAM early, so that we
 // do not fail in the middle of a TF run if it can be prevented.
-func (c *Config) ValidateConnection(sc *sections.Controller) error {
-	_, err := sc.ListSections()
-	return err
-}
+// func (c *Config) ValidateConnection(sc *sections.Controller) error {
+// 	_, err := sc.ListSections()
+// 	return err
+// }
